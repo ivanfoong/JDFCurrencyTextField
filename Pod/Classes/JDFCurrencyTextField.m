@@ -158,7 +158,12 @@
         number = @0;
     }
     
-    super.text = [self.currencyFormatter stringFromNumber:number];
+    if ([number isEqual:@0]) {
+        super.text = @"Free";
+    }
+    else {
+        super.text = [self.currencyFormatter stringFromNumber:number];
+    }
 }
 
 
